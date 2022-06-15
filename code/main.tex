@@ -1,0 +1,76 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{setspace}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{array}
+\usepackage{calc} 
+\usepackage{bm}
+\usepackage{caption}
+\usepackage{float}
+
+\usetheme{CambridgeUS}
+\useoutertheme{infolines}
+%numbering
+\setbeamercolor{background canvas}{bg=white}
+\setbeamersize{text margin left=1cm,text margin right=1cm}
+
+\title[AI1110  Assignment-11]{ASSIGNMENT-11}
+\subtitle{AI1110}
+\author[]{MUKUNDA REDDY \\ AI21BTECH11021}
+\date
+
+\begin{document}
+  \begin{frame}
+      \titlepage
+  \end{frame}
+  
+  \begin{frame}{Outline}
+      \tableofcontents
+  \end{frame}
+  
+  \section{Question}
+  \begin{frame}{Exercise 12-3}
+      Show that if X(t) is normal with $\eta_x = 0$ and
+      $R_x (\tau) = 0$ for $|\tau| > a$, then it is 
+      correlation-ergodic.
+  \end{frame}
+  
+  \section{Solution}
+  \begin{frame}{Solution}
+      We know that the process x(t) is covariance-ergodic if and only if
+      $$ \frac{1}{T} \int_{0} ^{T} C_{zz} (\tau) d\tau 
+         \xrightarrow[T\rightarrow \infty] \ 0 $$
+         if x(t) is a normal process then equation simplifies to
+         \begin{equation}
+         \label{eq1}
+             C_{zz} (\tau) = C(\lambda + \tau)C(\lambda - \tau) + C^{2}(\tau)
+         \end{equation}
+  \end{frame}
+  
+  \begin{frame}{Solution}
+   Here we can replace
+  \begin{align*}
+      C(\lambda + \tau) &= R_x (\lambda + \tau) \\
+      C(\lambda - \tau) &= R_x (\lambda - \tau)  \\
+      C^{2}(\tau)   &=  R_x ^{2}(\tau) \\
+  \end{align*}
+      \implies C_{zz} (\tau) = R_x (\lambda + \tau)R_x (\lambda - \tau) + R_x ^{2}(\tau) ,\: \: z(t) = x(t+\lambda)x(t)
+  \end{frame}
+  
+  \begin{frame}{Solution}
+      It is given that $R_x (\tau) = 0$ for $|\tau| > a$,
+      Substituting the values we get $C_{zz} (\tau) = 0$
+      for $|\tau| > \lambda + a$. Froim the above integral if we substitute integral it tends to 0.
+     $$ \frac{1}{T} \int_{0} ^{T} C_{zz} (\tau) d\tau =0$$
+     so from the if and only if condition x(t) is
+     correlation-ergodic.
+  \end{frame}
+  
+  \end{document}
